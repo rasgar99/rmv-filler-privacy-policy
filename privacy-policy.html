@@ -30,11 +30,13 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="updated">RMV Form Filler &nbsp;·&nbsp; Last updated: 26 July 2026</p>
+<p class="updated">RMV Form Filler &nbsp;·&nbsp; Last updated: 11 August 2026</p>
 
 <div class="highlight">
-  <strong>In short:</strong> RMV Form Filler does not collect, transmit, or store any of your data on any server.
-  Everything you type stays on your own device. There is no backend, no database, and no analytics.
+  <strong>In short:</strong> Starting with version 4.0, the details you enter to fill a form are sent securely
+  to a server we operate, solely to generate your PDF and check your subscription status — then discarded.
+  We do not keep a copy of your form data, your generated PDF, or anything that could identify who a
+  particular form was filled out for. There is no advertising, analytics, or tracking of how you use the app.
 </div>
 
 <h2>What information the app handles</h2>
@@ -45,20 +47,60 @@
   <li>Vehicle registration details</li>
 </ul>
 
-<h2>Where this information is stored</h2>
+<h2>How your form data is used (updated in version 4.0)</h2>
 <p>
-  All information you enter is stored <strong>only on your own device</strong>, using your device's local
-  storage. It is never sent to, or stored on, any server operated by the app developer or any third party.
-  The app has no internet-connected backend of its own — it does not need one, since all form-filling happens
-  entirely on your device.
+  Earlier versions of this app filled your PDF entirely on your device. Starting with version 4.0, the
+  information above is sent — encrypted in transit (HTTPS) — to a server we operate (hosted on Google Cloud /
+  Firebase) whose only job is to fill your PDF form and check whether your subscription is active, then send
+  the finished PDF back to your device.
+</p>
+<p>
+  <strong>We do not store the form details you send.</strong> The server does not save your name, address,
+  NIC number, vehicle number, or any other field you type — it uses that information only for the moment it
+  takes to generate your PDF, then discards it. We do not keep a copy of the generated PDF either; once it's
+  sent back to your device, our server has no further copy of it.
+</p>
+<p>
+  Your finance company details you save in the app (name, address, administrative details) still live only on
+  your device, the same as before — they're sent to the server as part of each request so your PDF can be
+  filled, but they are not stored there either.
+</p>
+
+<h2>What we do store</h2>
+<p>
+  To enforce the free-generation limit and prevent abuse, our server keeps a small record per installation of
+  the app: a randomly generated installation ID (not tied to your name, Google account, or any personal
+  detail) and a count of how many forms you've generated. This record contains no information about what was
+  actually in any form you filled — just an anonymous counter. It cannot be used to identify you or reconstruct
+  any form you've generated.
+</p>
+
+<h2>Subscription verification</h2>
+<p>
+  If you choose to subscribe, payment itself is still processed entirely by <strong>Google Play Billing</strong>
+  — the app and our server never see or store your payment details (card numbers, billing address, etc.),
+  which Google handles directly under
+  <a href="https://policies.google.com/privacy" target="_blank">Google's own Privacy Policy</a>.
+</p>
+<p>
+  To confirm a subscription is genuinely active, the app sends a Google-issued purchase token to our server,
+  which checks it directly against Google's Play Developer API. This token identifies the purchase, not you
+  personally, and is used only to verify your subscription status at the moment you generate a form.
+</p>
+
+<h2>App integrity check</h2>
+<p>
+  To prevent misuse of our server by anything other than the genuine app, requests include a short-lived
+  attestation token from Google Play's App Integrity service, confirming the request comes from an authentic,
+  unmodified copy of this app. This token doesn't identify you personally — it verifies the app, not the user.
 </p>
 
 <h2>Generated PDF files</h2>
 <p>
-  When you generate a filled form, the PDF is created entirely on your device and saved or shared using
-  Android's own file system and share features (for example, to Google Drive, WhatsApp, or your device's
-  Files app) — based on where <em>you</em> choose to send it. The app itself does not upload, transmit, or
-  retain a copy of any generated PDF.
+  Once the server sends the completed PDF back to your device, it's saved or shared using Android's own file
+  system and share features (for example, to Google Drive, WhatsApp, or your device's Files app) — based on
+  where <em>you</em> choose to send it. Beyond generating it and sending it back to you, we do not upload,
+  publish, or retain a copy of any generated PDF ourselves.
 </p>
 
 <h2>Third-party links (DMT eServices)</h2>
@@ -81,24 +123,25 @@
   policy and terms</a> for information on how they collect and handle your data on their portal.
 </p>
 
-<h2>Subscription payments</h2>
-<p>
-  If you choose to subscribe, payment is processed entirely by <strong>Google Play Billing</strong>. The app
-  never sees, collects, or stores your payment details (card numbers, billing address, etc.) — that
-  information is handled directly by Google, under
-  <a href="https://policies.google.com/privacy" target="_blank">Google's own Privacy Policy</a>.
-</p>
-
 <h2>No advertising, no tracking, no analytics</h2>
 <p>
   This app does not include advertising SDKs, analytics libraries, or any other third-party tracking tools.
-  We do not know how you use the app, and we have no way of finding out.
+  We do not track how you use the app, what screens you visit, or your behavior beyond what's described above
+  (an anonymous generation count, used only to enforce the free-generation limit).
+</p>
+
+<h2>Data security</h2>
+<p>
+  All communication between the app and our server is encrypted in transit (HTTPS). Server infrastructure is
+  hosted on Google Cloud / Firebase, and access to it is restricted to systems needed to operate the app.
 </p>
 
 <h2>Deleting your data</h2>
 <p>
-  Since all data lives only on your device, you can remove it at any time by clearing the app's data
-  (Android Settings → Apps → RMV Form Filler → Storage → Clear Data) or by uninstalling the app entirely.
+  Your finance company details, saved locally, can be removed at any time by clearing the app's data (Android
+  Settings → Apps → RMV Form Filler → Storage → Clear Data) or by uninstalling the app entirely. The anonymous
+  installation ID and generation count described above are not personally identifiable, but if you'd like us
+  to remove a specific record, contact us at the email below with your installation's details and we'll do so.
 </p>
 
 <h2>Changes to this policy</h2>
